@@ -8,11 +8,11 @@ const app = express();
 
 const port = process.env.port || 3000
 
-app.use(express.static('public'));//check this function
+app.use(express.static('public')); 
 app.set('view engine','ejs');
 //routes
 app.get('/', (req, res) => {
-  res.render('home');// console.log('Homepage')
+  res.render('home');// console.log('Homepage')  
 
 });
 
@@ -28,16 +28,12 @@ app.get('/', (req, res) => {
             else{
                
                city_name=data.name;
-                //res.send(name);
                  temp=data.main.temp;
                  temp=temp-273;
                  temp=Math.trunc(temp);
                
 
                  desec=data.weather[0].description;
-               
-                // name=JSON.stringify(data.name);
-                 //res.send({name,temp,desec});
                 
                 res.render('city',{x:city_name,temp:temp,desec:desec});
             }
@@ -46,40 +42,14 @@ app.get('/', (req, res) => {
     
     });
 
+
+
+
+
+
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /*
-    data(q,(result)=>{
-            res.send('hello');
-            res.send('dfaa');
-
   
     
-     /*   const temp=JSON.parse(result).main.temp;
-        console.log(temp);     
-        res.end('place: '+q + 'temperature' + temp);           
-
-           
-    })
-       
-})*/
 app.get('*', (req, res) => {
     res.status(404).send('NOT FOund')
     console.log('invalid request')
