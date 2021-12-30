@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<style>
+    .container{
+        margin-top: 50px;
+    }
+    .jumbotron{
+        border-radius: 6px;
+        background-color: #b3e0ff;
+    }
+</style>
+<body>
+    <center>
+        <div class="row">
+            <div class="container jumbotron">
+                <h1 align="left"><%=x %></h1> 
+                <div class="row">
+                    <div class="col-xs-4">
+                        <h2>Temp<h2>
+                            <big><%= temp %> °C</big>
+                        </div>
+                        <img src="icon.png">
+                        <div class="col-xs-4">
+                            <h2><%= desec %></h2>
+                        </div>
+                </div>
+                
+                     <form action="/weather?city=" method="GET">
+                    <label><h3>Location</h3></label> <input type="text" name="city">
+                    <input type="Submit">
+                    </form>
+                   
+           
+            </div>
+        <div align="left">
+        
+        </div>
+        </div>
+     </center>     
+</body>
+</html>
